@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo">
+    <form onsubmit="valida()">
+        <h1>Cadastro</h1>
+    <label for="Pname">Nome:</label><br>
+    <input type="text" id="Pname" required maxlength="25"><br>
+    <label for="e-mail">Email:</label><br>
+    <input type="email" id="e-mail" required maxlength="50"><br>
+    <label for="password">Senha:</label><br>
+    <input type="password" name="Senha" id="senha" required><br>
+    <input type="submit" value="Enviar" id="botao">
+    </form>
+
+    <script>
+        document.querySelector("form")
+        .addEventListener("submit",event =>{
+            console.log("Enviar Formulário")
+
+
+            event.preventDefault()
+        })
+
+        const forms = document.querySelectorAll("[required]")
+        for (form of forms){
+            form.addEventListener("invalid", event =>{
+                console.log("Campo Inválido");
+            })
+        }
+
+
+    </script>
+
+</body>
+</html>
